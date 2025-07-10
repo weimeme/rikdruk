@@ -53,8 +53,8 @@ pub use node_primitives::{Balance, Signature};
 type AccountPublic = <Signature as Verify>::Signer;
 
 // const STAGING_TELEMETRY_URL: &str = "wss://telemetry.polkadot.io/submit/";
-const ENDOWMENT: Balance = 100 * DOLLARS;
-const STASH: Balance = ENDOWMENT;
+const ENDOWMENT: Balance = 500_000_000 * DOLLARS;
+const STASH: Balance = 100 * DOLLARS;
 
 /// Node `ChainSpec` extensions.
 ///
@@ -308,12 +308,12 @@ fn development_config_genesis_json() -> serde_json::Value {
 /// Development config (single validator Alice).
 pub fn development_config() -> ChainSpec {
     ChainSpec::builder(wasm_binary_unwrap(), Default::default())
-        .with_name("Frontier Testnet")
-        .with_id("frontier-testnet")
+        .with_name("Rikdruk Testnet")
+        .with_id("rikdruk-testnet")
         .with_chain_type(ChainType::Development)
         .with_properties(
             serde_json::from_str(
-                "{\"isEthereum\": true, \"tokenDecimals\": 18, \"tokenSymbol\": \"UNIT\"}",
+                "{\"isEthereum\": true, \"tokenDecimals\": 18, \"tokenSymbol\": \"RDK\"}",
             )
             .expect("Provided valid json map"),
         )
