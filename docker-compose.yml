@@ -3,7 +3,10 @@ version: '3.8'
 services:
 
   init_alice:
-    image: chainsupport/substrate-testnet-node:latest
+    build:
+      context: .
+      dockerfile: docker/testnet-node.Dockerfile
+    image: rikdruk-testnet-node:local
     user: root
     entrypoint: ["/usr/local/bin/substrate"]
     command: ["key", "generate-node-key", "--base-path", "/data"]
@@ -11,7 +14,10 @@ services:
       - ./db/alice:/data
   
   init_bob:
-    image: chainsupport/substrate-testnet-node:latest
+    build:
+      context: .
+      dockerfile: docker/testnet-node.Dockerfile
+    image: rikdruk-testnet-node:local
     user: root
     entrypoint: ["/usr/local/bin/substrate"]
     command: ["key", "generate-node-key", "--base-path", "/data"]
@@ -19,7 +25,10 @@ services:
       - ./db/bob:/data
 
   alice:
-    image: chainsupport/substrate-testnet-node:latest
+    build:
+      context: .
+      dockerfile: docker/testnet-node.Dockerfile
+    image: rikdruk-testnet-node:local
     user: root
     command: ["--pruning", "archive", "--alice", "--rpc-max-connections", "100", "--rpc-cors", "all", "--rpc-methods", "Unsafe", "--unsafe-rpc-external"]
     volumes:
@@ -36,7 +45,10 @@ services:
       
 
   bob:
-    image: chainsupport/substrate-testnet-node:latest
+    build:
+      context: .
+      dockerfile: docker/testnet-node.Dockerfile
+    image: rikdruk-testnet-node:local
     user: root
     command: ["--pruning", "archive", "--bob", "--rpc-max-connections", "100", "--rpc-cors", "all", "--rpc-methods", "Unsafe", "--unsafe-rpc-external"]
     volumes:
