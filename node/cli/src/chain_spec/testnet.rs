@@ -301,7 +301,7 @@ fn development_config_genesis_json() -> serde_json::Value {
         Keyring::Alith.into(),
         Some(vec![Keyring::Alith.into(), Keyring::Baltathar.into()]),
         extra_endowed_accounts_balance,
-        42u32,
+        5297u32,
     )
 }
 
