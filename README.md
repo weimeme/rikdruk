@@ -1,6 +1,5 @@
 
-This is a general public chain development template based on [polkadot-sdk](https://github.com/paritytech/polkadot-sdk) and [frontier](https://github.com/polkadot-evm/frontier), using the NPOS protocol and compatible with the Ethereum EVM. It aims to make Polkadot technology more developer-friendly and to be used by more public chain teams.
-[polkadot-sdk](https://github.com/paritytech/polkadot-sdk) is an excellent public chain development technology, and we thank the ParityTech team for their contributions.
+Rikdruk Chain
 
 ## run develop chain
 [start develop](./docs/start-develop.md)
@@ -17,10 +16,10 @@ This is a general public chain development template based on [polkadot-sdk](http
 
 ## connect MetaMask wallet
 ```
-Network name: Frontier Testnet
-Default RPC URL: http://localhost:9944
-Chain ID: 42
-Currency symbol: UNIT
+Network name: Rikdruk Testnet
+Default RPC URL: https://rpc.rikdruk.ai/websocket
+Chain ID: 5297
+Currency symbol: RDK
 ```
 
 ![add network to MetaMask](./docs/images/add_network_to_metamask.jpg)
